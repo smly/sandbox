@@ -1,0 +1,63 @@
+  push 2005
+  push 0
+  store
+1003:
+  push 2002
+  push 0
+  store
+1001:
+  push 2001
+  dup
+  readchar
+  retrieve
+        # data
+  dup
+  jn 1002
+
+  dup
+  push 128
+  sub
+  jn 1005
+        # look forward
+  jump 1004
+        # next
+
+1002:
+ exit
+1004:
+        # data
+  push 128
+  sub
+  push 2002
+  retrieve
+  push 128
+  mul
+  add
+
+  dup
+  # dat
+  push 2005
+  # dat,2005
+  retrieve
+  # dat,val
+  add
+  dup
+  outnum
+  push 10
+  outchar
+  push 2005
+  swap
+  store
+  
+  jump 1003
+1005:
+  # data
+  push 2002
+  retrieve
+  push 128
+  mul
+  add
+  push 2002
+  swap
+  store
+  jump 1001

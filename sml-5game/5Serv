@@ -1,0 +1,2 @@
+#!/bin/sh -f
+java -cp $HOME/gitws/5moku_game/FiveServ.jar FiveServ $*

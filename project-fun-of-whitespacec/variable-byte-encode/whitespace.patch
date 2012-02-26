@@ -1,0 +1,9 @@
+141,142c141
+<         c = $stdin.getc
+<         @heap[@stack.pop] = c.nil? ? -1 : c
+---
+>         @heap[@stack.pop] = $stdin.getc
+144c143
+<         aaa = @heap[@stack.pop] = $stdin.gets.to_i
+---
+>         @heap[@stack.pop] = $stdin.gets.to_i

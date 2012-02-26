@@ -1,0 +1,43 @@
+0$ mkdir data && cd data
+0$ wget http://snap.stanford.edu/data/email-EuAll.txt.gz
+0$ gunzip email-EuAll.gz
+0$ cd ..
+0$ SPARK_MEM="800m" ./run spark.bagel.examples.ShortestDistance data/email-EuAll.txt 10 10 local > output
+11/07/30 17:59:35 INFO spark.MapOutputTrackerActor: Registered actor on port 50501
+11/07/30 17:59:35 INFO spark.CacheTrackerActor: Registered actor on port 50501
+11/07/30 17:59:36 INFO mapred.FileInputFormat: Total input paths to process : 1
+11/07/30 17:59:36 INFO spark.SparkContext: Starting job...
+11/07/30 17:59:36 INFO spark.CacheTracker: Registering RDD ID 8 with cache
+11/07/30 17:59:36 INFO spark.CacheTrackerActor: Registering RDD 8 with 1 partitions
+11/07/30 17:59:36 INFO spark.CacheTracker: Registering RDD ID 7 with cache
+...
+11/07/30 18:15:04 INFO spark.LocalScheduler: Finished task 0
+11/07/30 18:15:04 INFO spark.LocalScheduler: Completed ResultTask(2, 0)
+11/07/30 18:15:04 INFO spark.SparkContext: Job finished in 0.029739 s
+Read 265214 vertices and 1 messages.
+11/07/30 18:15:04 INFO bagel.Bagel: Starting superstep 0.
+11/07/30 18:15:04 INFO spark.CoGroupedRDD: Adding shuffle dependency with spark.MappedRDD@1d2c5431
+11/07/30 18:15:04 INFO spark.CoGroupedRDD: Adding shuffle dependency with spark.ShuffledRDD@6f40d824
+11/07/30 18:15:04 INFO spark.SparkContext: Starting job...
+...
+11/07/30 18:21:16 INFO bagel.Bagel: Superstep 7 took 48 s
+Shortest path from 10 to all vertices:
+11/07/30 18:21:16 INFO spark.SparkContext: Starting job...
+11/07/30 18:21:16 INFO spark.CacheTracker: Registering RDD ID 58 with cache
+11/07/30 18:21:16 INFO spark.CacheTrackerActor: Registering RDD 58 with 1 partitions
+11/07/30 18:21:16 INFO spark.CacheTracker: Registering RDD ID 57 with cache
+11/07/30 18:21:16 INFO spark.CacheTrackerActor: Registering RDD 57 with 1 partitions
+11/07/30 18:21:16 INFO spark.CacheTracker: Registering RDD ID 56 with cache
+11/07/30 18:21:16 INFO spark.CacheTrackerActor: Registering RDD 56 with 1 partitions
+11/07/30 18:21:16 INFO spark.CacheTrackerActor: Asked for current cache locations
+11/07/30 18:21:16 INFO spark.LocalScheduler: Final stage: Stage 35
+11/07/30 18:21:16 INFO spark.LocalScheduler: Parents of final stage: List(Stage 32, Stage 33)
+11/07/30 18:21:16 INFO spark.LocalScheduler: Missing parents: List()
+11/07/30 18:21:16 INFO spark.LocalScheduler: Submitting Stage 35, which has no missing parents
+11/07/30 18:21:16 INFO spark.LocalScheduler: Running task 0
+11/07/30 18:21:16 INFO spark.LocalScheduler: Size of task 0 is 19364 bytes
+11/07/30 18:21:17 INFO spark.CacheTracker: CachedRDD partition key is (55,0)
+11/07/30 18:21:17 INFO spark.CacheTracker: Found partition in cache!
+11/07/30 18:21:18 INFO spark.LocalScheduler: Finished task 0
+11/07/30 18:21:18 INFO spark.LocalScheduler: Completed ResultTask(35, 0)
+11/07/30 18:21:18 INFO spark.SparkContext: Job finished in 1.170925 s

@@ -1,0 +1,12 @@
+; Exercise 2.20
+(define (same-pair x . b)
+  (define (is-same-parity? x y)
+    (or (and (even? x) (even? y))
+        (and (odd? x) (odd? y))))
+  (define (same-pair-recur items)
+    (if (null? items)
+        '()
+        (if (is-same-parity? x (car items))
+            (cons (car items) (same-pair-recur (cdr items)))
+            (same-pair-recur (cdr items)))))
+  (cons x (same-pair-recur b)))

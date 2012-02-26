@@ -1,0 +1,222 @@
+# input list length: heap[2001]
+# temporary number : heap[2002] previou number k
+# reader buffer    : heap[2003] r
+# gaps             : heap[2004..]
+# encoded codes    : heap[2004+length+1..]
+
+# 1000 + a: functions
+# 2000 + a: heap address
+        push        0
+
+        push        2002
+        push        0
+        store
+                                        # heap[2002] = k
+        push        2004
+        dup
+                                        # initial position
+1002:
+        push        2003
+        dup
+                                        # p,p,r,r
+        readnum
+                                        # p,p,r
+        retrieve
+                                        # p,p,n
+        dup
+                                        # p,p,n,n
+        jz          1001
+                                        # exit if end of input
+                                        # p,p,n
+        dup
+                                        # p,p,n,n
+        push        2002
+        retrieve
+                                        # p,p,n,n,k
+        sub
+                                        # p,p,n,g
+        swap
+                                        # p,p,g,n
+        push        2002
+        swap
+        store
+                                        # k := n
+                                        # p,p,g
+        store
+                                        # store gap
+                                        # p
+        swap
+        push        1
+        add
+        swap
+
+        push        1
+        add
+        dup
+                                        # increment position
+                                        # p,p
+#        push        10
+#        outchar
+        jump        1002
+1001:
+        discard
+        discard
+
+        dup
+        push        2000
+        swap
+        store
+                        # heap[2000] := 2018
+        dup
+        push        1997
+        swap
+        store
+                        # heap[1997] := 2018
+        push        2001
+        push        2004
+        store
+
+        swap
+        # 2018,14
+        push 1
+        sub
+1003:
+#        dup
+#        outnum
+
+        push  2001
+        retrieve
+                        # 2018,14,2004
+        dup
+        retrieve
+                        # 2018,14,2004,gap
+        jump 1005
+1006:
+                        # 2018,14,2004
+        push 2000
+        retrieve
+        push 1
+        sub
+        dup
+                        # 2021,2021
+        retrieve
+                        # 2021,val
+        outchar
+                        # 2021
+        dup
+        push 2000
+        swap
+        store
+        
+        push 1997
+        retrieve
+        sub
+        jz 1011
+        jump 1006
+1011:
+                        # heap[2000] := heap[1997]
+        push 2000
+        push 1997
+        retrieve
+        store
+                        # inc read gap
+        push 1
+        add
+        push 2001
+        swap
+        store
+
+        # loop forward
+        push 1
+        sub
+        dup
+        jn 1004
+        jump 1003
+1004:
+        exit
+
+
+
+
+
+
+1005:
+                        # gap
+        push 2000
+        retrieve
+        swap
+                        # 2018,gap
+        dup
+        push 128
+        mod
+                        # 2018,gap,gap%128
+        push 2000
+        retrieve
+                        # 2018,gap,gap%128,2018
+        dup
+        push 1
+        add
+                        # 2018,gap,gap%128,2018,2019
+        push 2000
+        swap
+        store
+                        # heap[2000] := 2019
+                        # 2018,gap,gap%128,2018
+        swap
+
+#        dup
+#        outnum
+#        push 10
+#        outchar
+        store
+
+                        # heap[2018] := gap%128 .. preappend!!
+                        # 2018,gap
+        dup
+                        # 2018,gap,gap
+        push 1999
+        swap
+                        # 2018,gap,1999,gap
+        store
+                        # heap[1999] := gap
+                        # 2018,gap
+#        store
+        discard
+        discard
+                        # heap[2018] := gap
+                        # empty
+        push 1999
+        retrieve
+                        # gap
+        dup
+        push 129
+                        # gap,gap,129
+        swap
+        sub
+                        # gap,127-gap
+        jn 1010
+        discard
+                        # empty
+        push 1997
+        retrieve
+        dup
+        retrieve
+        push 128
+        add
+        store
+#        outnum
+#        push 10
+#        outchar
+                        # empty
+#        push 1997
+#        retrieve
+#        retrieve
+#        outnum
+#        push 10
+#        outchar
+        
+        jump 1006
+1010:
+        push 128
+        div
+        jump 1005
