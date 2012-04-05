@@ -1,0 +1,68 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+# TODO: handling error...
+require 'rubygems'
+require 'json'
+require 'twitter/json_stream'
+
+CONFIG_PATH = '~/.hashtag_stream'
+GROWLNOTIFY = "/Users/smly/gitws/sandbox/ruby-presen-help/growlnotify"
+AUTH_PAIR   = open(File.expand_path(CONFIG_PATH)).readline.chomp
+
+if ARGV.size == 0
+  $stderr.puts " Usage: hashtag_stream <keywords>"
+  exit 1
+end
+
+module MyGrowl
+  def self.growl title, msg, img=nil, pri=2, sticky=""
+    msg.gsub!(/\n/, " ")
+    title.gsub!(/\n/, " ")
+    target_img = File.dirname(__FILE__) + "/tmp.png"
+
+    system "wget #{img} -O #{target_img} 2> /dev/null"
+    system "#{GROWLNOTIFY} -n GrowlHashTag -H localhost --image #{target_img} -p 2 -m \"#{msg}\n#{title}\" \"#{title}\" #{sticky}"
+  end
+end
+
+EventMachine::run {
+  stream = Twitter::JSONStream.connect(
+    :path    => '/1/statuses/filter.json',
+    :auth    => AUTH_PAIR,
+    :method  => 'POST',
+    :ssl     => true,
+    :content => "track=#{ARGV[0]}"
+  )
+
+  stream.each_item do |item|
+    json = JSON.parse(item)
+    title = "@#{json['user']['screen_name']} (#{json['user']['name']})"
+    desc = json['text']
+    img_path = json['user']['profile_image_url']
+
+    MyGrowl.growl desc, title, img=img_path if desc !~ /^RT\s\@/
+    $stdout.puts "#{title} >> #{desc}"
+    $stdout.flush
+  end
+
+  stream.on_error do |message|
+    $stdout.print "error: #{message}\n"
+    $stdout.flush
+  end
+
+  stream.on_reconnect do |timeout, retries|
+    $stdout.print "reconnecting in: #{timeout} seconds\n"
+    $stdout.flush
+  end
+
+  stream.on_max_reconnects do |timeout, retries|
+    $stdout.print "Failed after #{retries} failed reconnects\n"
+    $stdout.flush
+  end
+
+  trap('TERM') {
+    stream.stop
+    EventMachine.stop if EventMachine.reactor_running?
+  }
+}
+puts "The event loop has ended"
