@@ -4,17 +4,35 @@ version := "0.0.1"
 
 scalaVersion := "2.9.1"
 
-//resolvers ++= Seq(
-//            // other resolvers here
-//            "Scala Tools Snapshots" at "http://scala-tools.org/repo-snapshots/",
-//            "ScalaNLP Maven2" at "http://repo.scalanlp.org/repo"
-//)
+scalacOptions ++= Seq("-deprecation", "-unchecked")
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "1.7.2" % "test"
+javacOptions ++= Seq("-Xlint:unchecked", "-Xlint:deprecation")
 
-libraryDependencies += "org.mockito" % "mockito-all" % "1.9.0" % "test"
+mainClass in (Compile, packageBin) := Some("com.sparsegraph.practice.Main")
 
-libraryDependencies += "org.apache.commons" % "commons-math3" % "3.0"
+mainClass in (Compile, run) := Some("com.sparsegraph.practice.Main")
 
-//libraryDependencies += "org.scalala" %% "scalala" % "1.0.0.RC2"
+// DEPENDENCIES for test
+libraryDependencies ++= Seq (
+  "org.scalacheck" %% "scalacheck" % "1.9" % "test",
+  "org.scalatest" %% "scalatest" % "1.7.2" % "test",
+  "org.mockito" % "mockito-all" % "1.9.0" % "test"
+)
 
+// DEPENDENCIES
+libraryDependencies ++= Seq (
+  "org.apache.commons" % "commons-math3" % "3.0"
+)
+
+logLevel := Level.Info
+
+traceLevel := 5
+
+//PROGUARD
+seq(ProguardPlugin.proguardSettings :_*)
+
+proguardOptions ++= Seq (
+    "-dontshrink -dontoptimize -dontobfuscate -dontpreverify -dontnote " +
+    "-ignorewarnings",
+    keepAllScala
+)
