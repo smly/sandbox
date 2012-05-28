@@ -1,0 +1,27 @@
+#!/bin/zsh
+# Require: scala, python (+ numpy, pylab)
+
+CHAIN_TMP=src/main/resource/csv/bench_chain_orient_performance_turning.tmp
+CHAIN_CSV=src/main/resource/csv/bench_chain_orient_performance_turning.csv
+CHAIN_PNG=src/main/resource/png/bench_chain_performance_turning.png
+
+echo "## sbt assembly"
+sbt assembly
+
+echo "## remove temporary directories"
+rm -rf /tmp/{ori1,neo1}
+
+echo "## java -Xss100M -Xms3000M -Xmx5000M -jar target/Sandbox-assembly-0.0.1.jar Chain"
+java -Xss100M -Xms3000M -Xmx5000M \
+  -jar target/Sandbox-assembly-0.0.1.jar \
+  Chain
+
+echo "## convert bench_chain_performance_turning.{tmp,csv}"
+grep "^>" $CHAIN_TMP \
+  | cut -d ' ' -f 2- \
+  > $CHAIN_CSV
+
+echo "## plot bench_chain_performance_turning.png"
+src/main/resource/bin/plot_bench_chain \
+  --input $CHAIN_CSV \
+  --output $CHAIN_PNG

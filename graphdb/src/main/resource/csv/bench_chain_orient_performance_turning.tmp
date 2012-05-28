@@ -1,0 +1,575 @@
+for OrientDB (Constructing line graph): ..........
+Trial # 1: Elapsed time = 6002.003 msec, 11.852 MB
+Trial # 2: Elapsed time = 3506.341 msec, 11.852 MB
+Trial # 3: Elapsed time = 2209.490 msec, 11.852 MB
+Trial # 4: Elapsed time = 2128.020 msec, 11.852 MB
+Trial # 5: Elapsed time = 2206.118 msec, 11.852 MB
+Trial # 6: Elapsed time = 2150.177 msec, 11.852 MB
+Trial # 7: Elapsed time = 2158.613 msec, 11.852 MB
+Trial # 8: Elapsed time = 2144.389 msec, 11.852 MB
+Trial # 9: Elapsed time = 2181.830 msec, 11.852 MB
+Trial # 10: Elapsed time = 2141.441 msec, 11.852 MB
+Mean Elapsed time       = 2682.842 msec
+Standard Deviation      = 1240.374 msec
+> orient,10000,6002.003,11.852
+> orient,10000,3506.341,11.852
+> orient,10000,2209.490,11.852
+> orient,10000,2128.020,11.852
+> orient,10000,2206.118,11.852
+> orient,10000,2150.177,11.852
+> orient,10000,2158.613,11.852
+> orient,10000,2144.389,11.852
+> orient,10000,2181.830,11.852
+> orient,10000,2141.441,11.852
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 2315.184 msec, 11.852 MB
+Trial # 2: Elapsed time = 2119.820 msec, 11.852 MB
+Trial # 3: Elapsed time = 2123.192 msec, 11.852 MB
+Trial # 4: Elapsed time = 2155.016 msec, 11.852 MB
+Trial # 5: Elapsed time = 2169.518 msec, 11.852 MB
+Trial # 6: Elapsed time = 2156.163 msec, 11.852 MB
+Trial # 7: Elapsed time = 2138.634 msec, 11.852 MB
+Trial # 8: Elapsed time = 2103.726 msec, 11.852 MB
+Trial # 9: Elapsed time = 2102.485 msec, 11.852 MB
+Trial # 10: Elapsed time = 2105.281 msec, 11.852 MB
+Mean Elapsed time       = 2148.902 msec
+Standard Deviation      = 63.136 msec
+> orient (Intent),10000,2315.184,11.852
+> orient (Intent),10000,2119.820,11.852
+> orient (Intent),10000,2123.192,11.852
+> orient (Intent),10000,2155.016,11.852
+> orient (Intent),10000,2169.518,11.852
+> orient (Intent),10000,2156.163,11.852
+> orient (Intent),10000,2138.634,11.852
+> orient (Intent),10000,2103.726,11.852
+> orient (Intent),10000,2102.485,11.852
+> orient (Intent),10000,2105.281,11.852
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 2157.824 msec, 11.852 MB
+Trial # 2: Elapsed time = 2151.735 msec, 11.852 MB
+Trial # 3: Elapsed time = 2147.940 msec, 11.852 MB
+Trial # 4: Elapsed time = 2104.276 msec, 11.852 MB
+Trial # 5: Elapsed time = 2100.863 msec, 11.852 MB
+Trial # 6: Elapsed time = 2101.477 msec, 11.852 MB
+Trial # 7: Elapsed time = 2131.993 msec, 11.852 MB
+Trial # 8: Elapsed time = 2140.858 msec, 11.852 MB
+Trial # 9: Elapsed time = 2136.478 msec, 11.852 MB
+Trial # 10: Elapsed time = 2137.102 msec, 11.852 MB
+Mean Elapsed time       = 2131.055 msec
+Standard Deviation      = 21.333 msec
+> orient (Intent+TxOff),10000,2157.824,11.852
+> orient (Intent+TxOff),10000,2151.735,11.852
+> orient (Intent+TxOff),10000,2147.940,11.852
+> orient (Intent+TxOff),10000,2104.276,11.852
+> orient (Intent+TxOff),10000,2100.863,11.852
+> orient (Intent+TxOff),10000,2101.477,11.852
+> orient (Intent+TxOff),10000,2131.993,11.852
+> orient (Intent+TxOff),10000,2140.858,11.852
+> orient (Intent+TxOff),10000,2136.478,11.852
+> orient (Intent+TxOff),10000,2137.102,11.852
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 2174.541 msec, 12.352 MB
+Trial # 2: Elapsed time = 2104.074 msec, 12.352 MB
+Trial # 3: Elapsed time = 2131.520 msec, 12.352 MB
+Trial # 4: Elapsed time = 2163.603 msec, 12.352 MB
+Trial # 5: Elapsed time = 2155.900 msec, 12.352 MB
+Trial # 6: Elapsed time = 2154.398 msec, 12.352 MB
+Trial # 7: Elapsed time = 2172.089 msec, 12.352 MB
+Trial # 8: Elapsed time = 2111.865 msec, 12.352 MB
+Trial # 9: Elapsed time = 2112.957 msec, 12.352 MB
+Trial # 10: Elapsed time = 2167.770 msec, 12.352 MB
+Mean Elapsed time       = 2144.872 msec
+Standard Deviation      = 27.202 msec
+> orient (Intent+TxOff+Stack10k),10000,2174.541,12.352
+> orient (Intent+TxOff+Stack10k),10000,2104.074,12.352
+> orient (Intent+TxOff+Stack10k),10000,2131.520,12.352
+> orient (Intent+TxOff+Stack10k),10000,2163.603,12.352
+> orient (Intent+TxOff+Stack10k),10000,2155.900,12.352
+> orient (Intent+TxOff+Stack10k),10000,2154.398,12.352
+> orient (Intent+TxOff+Stack10k),10000,2172.089,12.352
+> orient (Intent+TxOff+Stack10k),10000,2111.865,12.352
+> orient (Intent+TxOff+Stack10k),10000,2112.957,12.352
+> orient (Intent+TxOff+Stack10k),10000,2167.770,12.352
+for Neo4j (Conntructing line graph): ..........
+Trial # 1: Elapsed time = 2204.821 msec, 0.801 MB
+Trial # 2: Elapsed time = 984.851 msec, 0.801 MB
+Trial # 3: Elapsed time = 469.853 msec, 0.801 MB
+Trial # 4: Elapsed time = 436.615 msec, 0.801 MB
+Trial # 5: Elapsed time = 462.448 msec, 0.801 MB
+Trial # 6: Elapsed time = 426.256 msec, 0.801 MB
+Trial # 7: Elapsed time = 462.760 msec, 0.801 MB
+Trial # 8: Elapsed time = 433.361 msec, 0.801 MB
+Trial # 9: Elapsed time = 463.337 msec, 0.801 MB
+Trial # 10: Elapsed time = 475.719 msec, 0.801 MB
+Mean Elapsed time       = 682.002 msec
+Standard Deviation      = 560.732 msec
+> neo4j,10000,2204.821,0.801
+> neo4j,10000,984.851,0.801
+> neo4j,10000,469.853,0.801
+> neo4j,10000,436.615,0.801
+> neo4j,10000,462.448,0.801
+> neo4j,10000,426.256,0.801
+> neo4j,10000,462.760,0.801
+> neo4j,10000,433.361,0.801
+> neo4j,10000,463.337,0.801
+> neo4j,10000,475.719,0.801
+for OrientDB (Constructing line graph): ..........
+Trial # 1: Elapsed time = 4423.086 msec, 13.102 MB
+Trial # 2: Elapsed time = 4225.667 msec, 13.102 MB
+Trial # 3: Elapsed time = 4208.699 msec, 13.102 MB
+Trial # 4: Elapsed time = 4146.024 msec, 13.102 MB
+Trial # 5: Elapsed time = 4194.149 msec, 13.102 MB
+Trial # 6: Elapsed time = 4125.879 msec, 13.102 MB
+Trial # 7: Elapsed time = 4126.461 msec, 13.102 MB
+Trial # 8: Elapsed time = 4164.935 msec, 13.102 MB
+Trial # 9: Elapsed time = 4118.997 msec, 13.102 MB
+Trial # 10: Elapsed time = 4114.153 msec, 13.102 MB
+Mean Elapsed time       = 4184.805 msec
+Standard Deviation      = 92.618 msec
+> orient,20000,4423.086,13.102
+> orient,20000,4225.667,13.102
+> orient,20000,4208.699,13.102
+> orient,20000,4146.024,13.102
+> orient,20000,4194.149,13.102
+> orient,20000,4125.879,13.102
+> orient,20000,4126.461,13.102
+> orient,20000,4164.935,13.102
+> orient,20000,4118.997,13.102
+> orient,20000,4114.153,13.102
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 4020.403 msec, 13.102 MB
+Trial # 2: Elapsed time = 4106.617 msec, 13.102 MB
+Trial # 3: Elapsed time = 4025.896 msec, 13.102 MB
+Trial # 4: Elapsed time = 4031.090 msec, 13.102 MB
+Trial # 5: Elapsed time = 4112.210 msec, 13.102 MB
+Trial # 6: Elapsed time = 4054.223 msec, 13.102 MB
+Trial # 7: Elapsed time = 4013.467 msec, 13.102 MB
+Trial # 8: Elapsed time = 4064.693 msec, 13.102 MB
+Trial # 9: Elapsed time = 4119.405 msec, 13.102 MB
+Trial # 10: Elapsed time = 4017.948 msec, 13.102 MB
+Mean Elapsed time       = 4056.595 msec
+Standard Deviation      = 41.989 msec
+> orient (Intent),20000,4020.403,13.102
+> orient (Intent),20000,4106.617,13.102
+> orient (Intent),20000,4025.896,13.102
+> orient (Intent),20000,4031.090,13.102
+> orient (Intent),20000,4112.210,13.102
+> orient (Intent),20000,4054.223,13.102
+> orient (Intent),20000,4013.467,13.102
+> orient (Intent),20000,4064.693,13.102
+> orient (Intent),20000,4119.405,13.102
+> orient (Intent),20000,4017.948,13.102
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 4024.241 msec, 13.102 MB
+Trial # 2: Elapsed time = 4126.021 msec, 13.102 MB
+Trial # 3: Elapsed time = 4113.044 msec, 13.102 MB
+Trial # 4: Elapsed time = 4023.673 msec, 13.102 MB
+Trial # 5: Elapsed time = 4089.575 msec, 13.102 MB
+Trial # 6: Elapsed time = 4300.131 msec, 13.102 MB
+Trial # 7: Elapsed time = 4070.881 msec, 13.102 MB
+Trial # 8: Elapsed time = 4050.339 msec, 13.102 MB
+Trial # 9: Elapsed time = 4129.877 msec, 13.102 MB
+Trial # 10: Elapsed time = 4142.995 msec, 13.102 MB
+Mean Elapsed time       = 4107.078 msec
+Standard Deviation      = 80.366 msec
+> orient (Intent+TxOff),20000,4024.241,13.102
+> orient (Intent+TxOff),20000,4126.021,13.102
+> orient (Intent+TxOff),20000,4113.044,13.102
+> orient (Intent+TxOff),20000,4023.673,13.102
+> orient (Intent+TxOff),20000,4089.575,13.102
+> orient (Intent+TxOff),20000,4300.131,13.102
+> orient (Intent+TxOff),20000,4070.881,13.102
+> orient (Intent+TxOff),20000,4050.339,13.102
+> orient (Intent+TxOff),20000,4129.877,13.102
+> orient (Intent+TxOff),20000,4142.995,13.102
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 3834.021 msec, 14.102 MB
+Trial # 2: Elapsed time = 3902.063 msec, 14.102 MB
+Trial # 3: Elapsed time = 3893.052 msec, 14.102 MB
+Trial # 4: Elapsed time = 3881.110 msec, 14.102 MB
+Trial # 5: Elapsed time = 3849.756 msec, 14.102 MB
+Trial # 6: Elapsed time = 3901.382 msec, 14.102 MB
+Trial # 7: Elapsed time = 3887.216 msec, 14.102 MB
+Trial # 8: Elapsed time = 3857.724 msec, 14.102 MB
+Trial # 9: Elapsed time = 3805.268 msec, 14.102 MB
+Trial # 10: Elapsed time = 3811.353 msec, 14.102 MB
+Mean Elapsed time       = 3862.295 msec
+Standard Deviation      = 36.294 msec
+> orient (Intent+TxOff+Stack10k),20000,3834.021,14.102
+> orient (Intent+TxOff+Stack10k),20000,3902.063,14.102
+> orient (Intent+TxOff+Stack10k),20000,3893.052,14.102
+> orient (Intent+TxOff+Stack10k),20000,3881.110,14.102
+> orient (Intent+TxOff+Stack10k),20000,3849.756,14.102
+> orient (Intent+TxOff+Stack10k),20000,3901.382,14.102
+> orient (Intent+TxOff+Stack10k),20000,3887.216,14.102
+> orient (Intent+TxOff+Stack10k),20000,3857.724,14.102
+> orient (Intent+TxOff+Stack10k),20000,3805.268,14.102
+> orient (Intent+TxOff+Stack10k),20000,3811.353,14.102
+for Neo4j (Conntructing line graph): ..........
+Trial # 1: Elapsed time = 576.329 msec, 1.593 MB
+Trial # 2: Elapsed time = 574.836 msec, 1.593 MB
+Trial # 3: Elapsed time = 586.680 msec, 1.593 MB
+Trial # 4: Elapsed time = 561.704 msec, 1.593 MB
+Trial # 5: Elapsed time = 859.724 msec, 1.593 MB
+Trial # 6: Elapsed time = 608.974 msec, 1.593 MB
+Trial # 7: Elapsed time = 582.779 msec, 1.593 MB
+Trial # 8: Elapsed time = 562.195 msec, 1.593 MB
+Trial # 9: Elapsed time = 561.757 msec, 1.593 MB
+Trial # 10: Elapsed time = 566.586 msec, 1.593 MB
+Mean Elapsed time       = 604.156 msec
+Standard Deviation      = 90.986 msec
+> neo4j,20000,576.329,1.593
+> neo4j,20000,574.836,1.593
+> neo4j,20000,586.680,1.593
+> neo4j,20000,561.704,1.593
+> neo4j,20000,859.724,1.593
+> neo4j,20000,608.974,1.593
+> neo4j,20000,582.779,1.593
+> neo4j,20000,562.195,1.593
+> neo4j,20000,561.757,1.593
+> neo4j,20000,566.586,1.593
+for OrientDB (Constructing line graph): ..........
+Trial # 1: Elapsed time = 6351.398 msec, 14.102 MB
+Trial # 2: Elapsed time = 6070.544 msec, 14.102 MB
+Trial # 3: Elapsed time = 6145.829 msec, 14.102 MB
+Trial # 4: Elapsed time = 6088.339 msec, 14.102 MB
+Trial # 5: Elapsed time = 6122.404 msec, 14.102 MB
+Trial # 6: Elapsed time = 6115.604 msec, 14.102 MB
+Trial # 7: Elapsed time = 6103.806 msec, 14.102 MB
+Trial # 8: Elapsed time = 6198.115 msec, 14.102 MB
+Trial # 9: Elapsed time = 6072.792 msec, 14.102 MB
+Trial # 10: Elapsed time = 6204.965 msec, 14.102 MB
+Mean Elapsed time       = 6147.380 msec
+Standard Deviation      = 85.636 msec
+> orient,30000,6351.398,14.102
+> orient,30000,6070.544,14.102
+> orient,30000,6145.829,14.102
+> orient,30000,6088.339,14.102
+> orient,30000,6122.404,14.102
+> orient,30000,6115.604,14.102
+> orient,30000,6103.806,14.102
+> orient,30000,6198.115,14.102
+> orient,30000,6072.792,14.102
+> orient,30000,6204.965,14.102
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 6012.450 msec, 14.102 MB
+Trial # 2: Elapsed time = 6046.004 msec, 14.102 MB
+Trial # 3: Elapsed time = 6097.213 msec, 14.102 MB
+Trial # 4: Elapsed time = 5999.160 msec, 14.102 MB
+Trial # 5: Elapsed time = 6080.978 msec, 14.102 MB
+Trial # 6: Elapsed time = 6043.176 msec, 14.102 MB
+Trial # 7: Elapsed time = 6111.133 msec, 14.102 MB
+Trial # 8: Elapsed time = 6115.861 msec, 14.102 MB
+Trial # 9: Elapsed time = 6060.786 msec, 14.102 MB
+Trial # 10: Elapsed time = 6115.019 msec, 14.102 MB
+Mean Elapsed time       = 6068.178 msec
+Standard Deviation      = 42.636 msec
+> orient (Intent),30000,6012.450,14.102
+> orient (Intent),30000,6046.004,14.102
+> orient (Intent),30000,6097.213,14.102
+> orient (Intent),30000,5999.160,14.102
+> orient (Intent),30000,6080.978,14.102
+> orient (Intent),30000,6043.176,14.102
+> orient (Intent),30000,6111.133,14.102
+> orient (Intent),30000,6115.861,14.102
+> orient (Intent),30000,6060.786,14.102
+> orient (Intent),30000,6115.019,14.102
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 6067.780 msec, 14.102 MB
+Trial # 2: Elapsed time = 5950.104 msec, 14.102 MB
+Trial # 3: Elapsed time = 5981.079 msec, 14.102 MB
+Trial # 4: Elapsed time = 5955.345 msec, 14.102 MB
+Trial # 5: Elapsed time = 5951.833 msec, 14.102 MB
+Trial # 6: Elapsed time = 6014.518 msec, 14.102 MB
+Trial # 7: Elapsed time = 5956.947 msec, 14.102 MB
+Trial # 8: Elapsed time = 6008.264 msec, 14.102 MB
+Trial # 9: Elapsed time = 5999.523 msec, 14.102 MB
+Trial # 10: Elapsed time = 5966.392 msec, 14.102 MB
+Mean Elapsed time       = 5985.179 msec
+Standard Deviation      = 37.744 msec
+> orient (Intent+TxOff),30000,6067.780,14.102
+> orient (Intent+TxOff),30000,5950.104,14.102
+> orient (Intent+TxOff),30000,5981.079,14.102
+> orient (Intent+TxOff),30000,5955.345,14.102
+> orient (Intent+TxOff),30000,5951.833,14.102
+> orient (Intent+TxOff),30000,6014.518,14.102
+> orient (Intent+TxOff),30000,5956.947,14.102
+> orient (Intent+TxOff),30000,6008.264,14.102
+> orient (Intent+TxOff),30000,5999.523,14.102
+> orient (Intent+TxOff),30000,5966.392,14.102
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 5679.271 msec, 15.227 MB
+Trial # 2: Elapsed time = 5547.305 msec, 15.227 MB
+Trial # 3: Elapsed time = 5627.459 msec, 15.227 MB
+Trial # 4: Elapsed time = 5649.896 msec, 15.227 MB
+Trial # 5: Elapsed time = 5551.386 msec, 15.227 MB
+Trial # 6: Elapsed time = 5678.650 msec, 15.227 MB
+Trial # 7: Elapsed time = 5622.093 msec, 15.227 MB
+Trial # 8: Elapsed time = 5623.898 msec, 15.227 MB
+Trial # 9: Elapsed time = 5698.474 msec, 15.227 MB
+Trial # 10: Elapsed time = 5597.300 msec, 15.227 MB
+Mean Elapsed time       = 5627.573 msec
+Standard Deviation      = 51.655 msec
+> orient (Intent+TxOff+Stack10k),30000,5679.271,15.227
+> orient (Intent+TxOff+Stack10k),30000,5547.305,15.227
+> orient (Intent+TxOff+Stack10k),30000,5627.459,15.227
+> orient (Intent+TxOff+Stack10k),30000,5649.896,15.227
+> orient (Intent+TxOff+Stack10k),30000,5551.386,15.227
+> orient (Intent+TxOff+Stack10k),30000,5678.650,15.227
+> orient (Intent+TxOff+Stack10k),30000,5622.093,15.227
+> orient (Intent+TxOff+Stack10k),30000,5623.898,15.227
+> orient (Intent+TxOff+Stack10k),30000,5698.474,15.227
+> orient (Intent+TxOff+Stack10k),30000,5597.300,15.227
+for Neo4j (Conntructing line graph): ..........
+Trial # 1: Elapsed time = 767.579 msec, 2.384 MB
+Trial # 2: Elapsed time = 802.974 msec, 2.384 MB
+Trial # 3: Elapsed time = 762.828 msec, 2.384 MB
+Trial # 4: Elapsed time = 765.327 msec, 2.384 MB
+Trial # 5: Elapsed time = 765.066 msec, 2.384 MB
+Trial # 6: Elapsed time = 767.745 msec, 2.384 MB
+Trial # 7: Elapsed time = 761.639 msec, 2.384 MB
+Trial # 8: Elapsed time = 800.003 msec, 2.384 MB
+Trial # 9: Elapsed time = 809.550 msec, 2.384 MB
+Trial # 10: Elapsed time = 773.133 msec, 2.384 MB
+Mean Elapsed time       = 777.584 msec
+Standard Deviation      = 18.752 msec
+> neo4j,30000,767.579,2.384
+> neo4j,30000,802.974,2.384
+> neo4j,30000,762.828,2.384
+> neo4j,30000,765.327,2.384
+> neo4j,30000,765.066,2.384
+> neo4j,30000,767.745,2.384
+> neo4j,30000,761.639,2.384
+> neo4j,30000,800.003,2.384
+> neo4j,30000,809.550,2.384
+> neo4j,30000,773.133,2.384
+for OrientDB (Constructing line graph): ..........
+Trial # 1: Elapsed time = 9194.055 msec, 15.227 MB
+Trial # 2: Elapsed time = 8309.569 msec, 15.227 MB
+Trial # 3: Elapsed time = 8180.660 msec, 15.227 MB
+Trial # 4: Elapsed time = 8146.805 msec, 15.227 MB
+Trial # 5: Elapsed time = 8098.717 msec, 15.227 MB
+Trial # 6: Elapsed time = 8173.002 msec, 15.227 MB
+Trial # 7: Elapsed time = 8116.970 msec, 15.227 MB
+Trial # 8: Elapsed time = 8221.200 msec, 15.227 MB
+Trial # 9: Elapsed time = 8097.092 msec, 15.227 MB
+Trial # 10: Elapsed time = 8232.177 msec, 15.227 MB
+Mean Elapsed time       = 8277.025 msec
+Standard Deviation      = 328.968 msec
+> orient,40000,9194.055,15.227
+> orient,40000,8309.569,15.227
+> orient,40000,8180.660,15.227
+> orient,40000,8146.805,15.227
+> orient,40000,8098.717,15.227
+> orient,40000,8173.002,15.227
+> orient,40000,8116.970,15.227
+> orient,40000,8221.200,15.227
+> orient,40000,8097.092,15.227
+> orient,40000,8232.177,15.227
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 7935.435 msec, 15.227 MB
+Trial # 2: Elapsed time = 8044.161 msec, 15.227 MB
+Trial # 3: Elapsed time = 7980.335 msec, 15.227 MB
+Trial # 4: Elapsed time = 8044.720 msec, 15.227 MB
+Trial # 5: Elapsed time = 8110.894 msec, 15.227 MB
+Trial # 6: Elapsed time = 8030.582 msec, 15.227 MB
+Trial # 7: Elapsed time = 8037.631 msec, 15.227 MB
+Trial # 8: Elapsed time = 8053.033 msec, 15.227 MB
+Trial # 9: Elapsed time = 8118.199 msec, 15.227 MB
+Trial # 10: Elapsed time = 8101.334 msec, 15.227 MB
+Mean Elapsed time       = 8045.633 msec
+Standard Deviation      = 57.138 msec
+> orient (Intent),40000,7935.435,15.227
+> orient (Intent),40000,8044.161,15.227
+> orient (Intent),40000,7980.335,15.227
+> orient (Intent),40000,8044.720,15.227
+> orient (Intent),40000,8110.894,15.227
+> orient (Intent),40000,8030.582,15.227
+> orient (Intent),40000,8037.631,15.227
+> orient (Intent),40000,8053.033,15.227
+> orient (Intent),40000,8118.199,15.227
+> orient (Intent),40000,8101.334,15.227
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 8004.169 msec, 15.227 MB
+Trial # 2: Elapsed time = 7909.532 msec, 15.227 MB
+Trial # 3: Elapsed time = 7915.248 msec, 15.227 MB
+Trial # 4: Elapsed time = 7933.105 msec, 15.227 MB
+Trial # 5: Elapsed time = 7926.145 msec, 15.227 MB
+Trial # 6: Elapsed time = 7977.712 msec, 15.227 MB
+Trial # 7: Elapsed time = 7992.042 msec, 15.227 MB
+Trial # 8: Elapsed time = 7987.464 msec, 15.227 MB
+Trial # 9: Elapsed time = 8040.161 msec, 15.227 MB
+Trial # 10: Elapsed time = 7948.355 msec, 15.227 MB
+Mean Elapsed time       = 7963.393 msec
+Standard Deviation      = 43.348 msec
+> orient (Intent+TxOff),40000,8004.169,15.227
+> orient (Intent+TxOff),40000,7909.532,15.227
+> orient (Intent+TxOff),40000,7915.248,15.227
+> orient (Intent+TxOff),40000,7933.105,15.227
+> orient (Intent+TxOff),40000,7926.145,15.227
+> orient (Intent+TxOff),40000,7977.712,15.227
+> orient (Intent+TxOff),40000,7992.042,15.227
+> orient (Intent+TxOff),40000,7987.464,15.227
+> orient (Intent+TxOff),40000,8040.161,15.227
+> orient (Intent+TxOff),40000,7948.355,15.227
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 7439.208 msec, 15.915 MB
+Trial # 2: Elapsed time = 7325.485 msec, 15.915 MB
+Trial # 3: Elapsed time = 7472.847 msec, 15.915 MB
+Trial # 4: Elapsed time = 7377.503 msec, 15.915 MB
+Trial # 5: Elapsed time = 7481.239 msec, 15.915 MB
+Trial # 6: Elapsed time = 7404.055 msec, 15.915 MB
+Trial # 7: Elapsed time = 7479.969 msec, 15.915 MB
+Trial # 8: Elapsed time = 7450.563 msec, 15.915 MB
+Trial # 9: Elapsed time = 7486.867 msec, 15.915 MB
+Trial # 10: Elapsed time = 7378.598 msec, 15.915 MB
+Mean Elapsed time       = 7429.634 msec
+Standard Deviation      = 55.471 msec
+> orient (Intent+TxOff+Stack10k),40000,7439.208,15.915
+> orient (Intent+TxOff+Stack10k),40000,7325.485,15.915
+> orient (Intent+TxOff+Stack10k),40000,7472.847,15.915
+> orient (Intent+TxOff+Stack10k),40000,7377.503,15.915
+> orient (Intent+TxOff+Stack10k),40000,7481.239,15.915
+> orient (Intent+TxOff+Stack10k),40000,7404.055,15.915
+> orient (Intent+TxOff+Stack10k),40000,7479.969,15.915
+> orient (Intent+TxOff+Stack10k),40000,7450.563,15.915
+> orient (Intent+TxOff+Stack10k),40000,7486.867,15.915
+> orient (Intent+TxOff+Stack10k),40000,7378.598,15.915
+for Neo4j (Conntructing line graph): ..........
+Trial # 1: Elapsed time = 945.634 msec, 3.176 MB
+Trial # 2: Elapsed time = 956.983 msec, 3.176 MB
+Trial # 3: Elapsed time = 920.705 msec, 3.176 MB
+Trial # 4: Elapsed time = 1114.263 msec, 3.176 MB
+Trial # 5: Elapsed time = 957.319 msec, 3.176 MB
+Trial # 6: Elapsed time = 952.044 msec, 3.176 MB
+Trial # 7: Elapsed time = 962.212 msec, 3.176 MB
+Trial # 8: Elapsed time = 934.148 msec, 3.176 MB
+Trial # 9: Elapsed time = 922.715 msec, 3.176 MB
+Trial # 10: Elapsed time = 965.626 msec, 3.176 MB
+Mean Elapsed time       = 963.165 msec
+Standard Deviation      = 55.400 msec
+> neo4j,40000,945.634,3.176
+> neo4j,40000,956.983,3.176
+> neo4j,40000,920.705,3.176
+> neo4j,40000,1114.263,3.176
+> neo4j,40000,957.319,3.176
+> neo4j,40000,952.044,3.176
+> neo4j,40000,962.212,3.176
+> neo4j,40000,934.148,3.176
+> neo4j,40000,922.715,3.176
+> neo4j,40000,965.626,3.176
+for OrientDB (Constructing line graph): ..........
+Trial # 1: Elapsed time = 10284.271 msec, 15.915 MB
+Trial # 2: Elapsed time = 10185.764 msec, 15.915 MB
+Trial # 3: Elapsed time = 10147.791 msec, 15.915 MB
+Trial # 4: Elapsed time = 10208.488 msec, 15.915 MB
+Trial # 5: Elapsed time = 10314.069 msec, 15.915 MB
+Trial # 6: Elapsed time = 10229.573 msec, 15.915 MB
+Trial # 7: Elapsed time = 10238.235 msec, 15.915 MB
+Trial # 8: Elapsed time = 10385.852 msec, 15.915 MB
+Trial # 9: Elapsed time = 10299.446 msec, 15.915 MB
+Trial # 10: Elapsed time = 10299.964 msec, 15.915 MB
+Mean Elapsed time       = 10259.346 msec
+Standard Deviation      = 70.439 msec
+> orient,50000,10284.271,15.915
+> orient,50000,10185.764,15.915
+> orient,50000,10147.791,15.915
+> orient,50000,10208.488,15.915
+> orient,50000,10314.069,15.915
+> orient,50000,10229.573,15.915
+> orient,50000,10238.235,15.915
+> orient,50000,10385.852,15.915
+> orient,50000,10299.446,15.915
+> orient,50000,10299.964,15.915
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 10113.966 msec, 15.915 MB
+Trial # 2: Elapsed time = 10108.501 msec, 15.915 MB
+Trial # 3: Elapsed time = 10119.109 msec, 15.915 MB
+Trial # 4: Elapsed time = 9886.578 msec, 15.915 MB
+Trial # 5: Elapsed time = 9888.373 msec, 15.915 MB
+Trial # 6: Elapsed time = 9941.964 msec, 15.915 MB
+Trial # 7: Elapsed time = 9912.804 msec, 15.915 MB
+Trial # 8: Elapsed time = 9925.279 msec, 15.915 MB
+Trial # 9: Elapsed time = 10017.402 msec, 15.915 MB
+Trial # 10: Elapsed time = 9975.439 msec, 15.915 MB
+Mean Elapsed time       = 9988.942 msec
+Standard Deviation      = 94.581 msec
+> orient (Intent),50000,10113.966,15.915
+> orient (Intent),50000,10108.501,15.915
+> orient (Intent),50000,10119.109,15.915
+> orient (Intent),50000,9886.578,15.915
+> orient (Intent),50000,9888.373,15.915
+> orient (Intent),50000,9941.964,15.915
+> orient (Intent),50000,9912.804,15.915
+> orient (Intent),50000,9925.279,15.915
+> orient (Intent),50000,10017.402,15.915
+> orient (Intent),50000,9975.439,15.915
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 9912.906 msec, 15.915 MB
+Trial # 2: Elapsed time = 10113.689 msec, 15.915 MB
+Trial # 3: Elapsed time = 9998.211 msec, 15.915 MB
+Trial # 4: Elapsed time = 10042.606 msec, 15.915 MB
+Trial # 5: Elapsed time = 10133.523 msec, 15.915 MB
+Trial # 6: Elapsed time = 10085.644 msec, 15.915 MB
+Trial # 7: Elapsed time = 10120.886 msec, 15.915 MB
+Trial # 8: Elapsed time = 10012.423 msec, 15.915 MB
+Trial # 9: Elapsed time = 9877.220 msec, 15.915 MB
+Trial # 10: Elapsed time = 9947.474 msec, 15.915 MB
+Mean Elapsed time       = 10024.458 msec
+Standard Deviation      = 90.745 msec
+> orient (Intent+TxOff),50000,9912.906,15.915
+> orient (Intent+TxOff),50000,10113.689,15.915
+> orient (Intent+TxOff),50000,9998.211,15.915
+> orient (Intent+TxOff),50000,10042.606,15.915
+> orient (Intent+TxOff),50000,10133.523,15.915
+> orient (Intent+TxOff),50000,10085.644,15.915
+> orient (Intent+TxOff),50000,10120.886,15.915
+> orient (Intent+TxOff),50000,10012.423,15.915
+> orient (Intent+TxOff),50000,9877.220,15.915
+> orient (Intent+TxOff),50000,9947.474,15.915
+for OrientDB MII (Constructing line graph): ..........
+Trial # 1: Elapsed time = 9008.802 msec, 17.915 MB
+Trial # 2: Elapsed time = 9109.245 msec, 17.915 MB
+Trial # 3: Elapsed time = 9132.975 msec, 17.915 MB
+Trial # 4: Elapsed time = 9047.120 msec, 17.915 MB
+Trial # 5: Elapsed time = 9230.706 msec, 17.915 MB
+Trial # 6: Elapsed time = 9148.284 msec, 17.915 MB
+Trial # 7: Elapsed time = 9157.803 msec, 17.915 MB
+Trial # 8: Elapsed time = 9340.451 msec, 17.915 MB
+Trial # 9: Elapsed time = 9174.614 msec, 17.915 MB
+Trial # 10: Elapsed time = 9275.819 msec, 17.915 MB
+Mean Elapsed time       = 9162.582 msec
+Standard Deviation      = 100.097 msec
+> orient (Intent+TxOff+Stack10k),50000,9008.802,17.915
+> orient (Intent+TxOff+Stack10k),50000,9109.245,17.915
+> orient (Intent+TxOff+Stack10k),50000,9132.975,17.915
+> orient (Intent+TxOff+Stack10k),50000,9047.120,17.915
+> orient (Intent+TxOff+Stack10k),50000,9230.706,17.915
+> orient (Intent+TxOff+Stack10k),50000,9148.284,17.915
+> orient (Intent+TxOff+Stack10k),50000,9157.803,17.915
+> orient (Intent+TxOff+Stack10k),50000,9340.451,17.915
+> orient (Intent+TxOff+Stack10k),50000,9174.614,17.915
+> orient (Intent+TxOff+Stack10k),50000,9275.819,17.915
+for Neo4j (Conntructing line graph): ..........
+Trial # 1: Elapsed time = 1165.001 msec, 3.967 MB
+Trial # 2: Elapsed time = 1154.950 msec, 3.967 MB
+Trial # 3: Elapsed time = 1171.687 msec, 3.967 MB
+Trial # 4: Elapsed time = 1199.377 msec, 3.967 MB
+Trial # 5: Elapsed time = 1163.955 msec, 3.967 MB
+Trial # 6: Elapsed time = 1457.818 msec, 3.967 MB
+Trial # 7: Elapsed time = 1163.118 msec, 3.967 MB
+Trial # 8: Elapsed time = 1181.961 msec, 3.967 MB
+Trial # 9: Elapsed time = 1189.481 msec, 3.967 MB
+Trial # 10: Elapsed time = 1208.371 msec, 3.967 MB
+Mean Elapsed time       = 1205.572 msec
+Standard Deviation      = 90.297 msec
+> neo4j,50000,1165.001,3.967
+> neo4j,50000,1154.950,3.967
+> neo4j,50000,1171.687,3.967
+> neo4j,50000,1199.377,3.967
+> neo4j,50000,1163.955,3.967
+> neo4j,50000,1457.818,3.967
+> neo4j,50000,1163.118,3.967
+> neo4j,50000,1181.961,3.967
+> neo4j,50000,1189.481,3.967
+> neo4j,50000,1208.371,3.967

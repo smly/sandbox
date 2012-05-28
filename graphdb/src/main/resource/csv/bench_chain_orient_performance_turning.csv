@@ -1,0 +1,250 @@
+orient,10000,6002.003,11.852
+orient,10000,3506.341,11.852
+orient,10000,2209.490,11.852
+orient,10000,2128.020,11.852
+orient,10000,2206.118,11.852
+orient,10000,2150.177,11.852
+orient,10000,2158.613,11.852
+orient,10000,2144.389,11.852
+orient,10000,2181.830,11.852
+orient,10000,2141.441,11.852
+orient (Intent),10000,2315.184,11.852
+orient (Intent),10000,2119.820,11.852
+orient (Intent),10000,2123.192,11.852
+orient (Intent),10000,2155.016,11.852
+orient (Intent),10000,2169.518,11.852
+orient (Intent),10000,2156.163,11.852
+orient (Intent),10000,2138.634,11.852
+orient (Intent),10000,2103.726,11.852
+orient (Intent),10000,2102.485,11.852
+orient (Intent),10000,2105.281,11.852
+orient (Intent+TxOff),10000,2157.824,11.852
+orient (Intent+TxOff),10000,2151.735,11.852
+orient (Intent+TxOff),10000,2147.940,11.852
+orient (Intent+TxOff),10000,2104.276,11.852
+orient (Intent+TxOff),10000,2100.863,11.852
+orient (Intent+TxOff),10000,2101.477,11.852
+orient (Intent+TxOff),10000,2131.993,11.852
+orient (Intent+TxOff),10000,2140.858,11.852
+orient (Intent+TxOff),10000,2136.478,11.852
+orient (Intent+TxOff),10000,2137.102,11.852
+orient (Intent+TxOff+Stack10k),10000,2174.541,12.352
+orient (Intent+TxOff+Stack10k),10000,2104.074,12.352
+orient (Intent+TxOff+Stack10k),10000,2131.520,12.352
+orient (Intent+TxOff+Stack10k),10000,2163.603,12.352
+orient (Intent+TxOff+Stack10k),10000,2155.900,12.352
+orient (Intent+TxOff+Stack10k),10000,2154.398,12.352
+orient (Intent+TxOff+Stack10k),10000,2172.089,12.352
+orient (Intent+TxOff+Stack10k),10000,2111.865,12.352
+orient (Intent+TxOff+Stack10k),10000,2112.957,12.352
+orient (Intent+TxOff+Stack10k),10000,2167.770,12.352
+neo4j,10000,2204.821,0.801
+neo4j,10000,984.851,0.801
+neo4j,10000,469.853,0.801
+neo4j,10000,436.615,0.801
+neo4j,10000,462.448,0.801
+neo4j,10000,426.256,0.801
+neo4j,10000,462.760,0.801
+neo4j,10000,433.361,0.801
+neo4j,10000,463.337,0.801
+neo4j,10000,475.719,0.801
+orient,20000,4423.086,13.102
+orient,20000,4225.667,13.102
+orient,20000,4208.699,13.102
+orient,20000,4146.024,13.102
+orient,20000,4194.149,13.102
+orient,20000,4125.879,13.102
+orient,20000,4126.461,13.102
+orient,20000,4164.935,13.102
+orient,20000,4118.997,13.102
+orient,20000,4114.153,13.102
+orient (Intent),20000,4020.403,13.102
+orient (Intent),20000,4106.617,13.102
+orient (Intent),20000,4025.896,13.102
+orient (Intent),20000,4031.090,13.102
+orient (Intent),20000,4112.210,13.102
+orient (Intent),20000,4054.223,13.102
+orient (Intent),20000,4013.467,13.102
+orient (Intent),20000,4064.693,13.102
+orient (Intent),20000,4119.405,13.102
+orient (Intent),20000,4017.948,13.102
+orient (Intent+TxOff),20000,4024.241,13.102
+orient (Intent+TxOff),20000,4126.021,13.102
+orient (Intent+TxOff),20000,4113.044,13.102
+orient (Intent+TxOff),20000,4023.673,13.102
+orient (Intent+TxOff),20000,4089.575,13.102
+orient (Intent+TxOff),20000,4300.131,13.102
+orient (Intent+TxOff),20000,4070.881,13.102
+orient (Intent+TxOff),20000,4050.339,13.102
+orient (Intent+TxOff),20000,4129.877,13.102
+orient (Intent+TxOff),20000,4142.995,13.102
+orient (Intent+TxOff+Stack10k),20000,3834.021,14.102
+orient (Intent+TxOff+Stack10k),20000,3902.063,14.102
+orient (Intent+TxOff+Stack10k),20000,3893.052,14.102
+orient (Intent+TxOff+Stack10k),20000,3881.110,14.102
+orient (Intent+TxOff+Stack10k),20000,3849.756,14.102
+orient (Intent+TxOff+Stack10k),20000,3901.382,14.102
+orient (Intent+TxOff+Stack10k),20000,3887.216,14.102
+orient (Intent+TxOff+Stack10k),20000,3857.724,14.102
+orient (Intent+TxOff+Stack10k),20000,3805.268,14.102
+orient (Intent+TxOff+Stack10k),20000,3811.353,14.102
+neo4j,20000,576.329,1.593
+neo4j,20000,574.836,1.593
+neo4j,20000,586.680,1.593
+neo4j,20000,561.704,1.593
+neo4j,20000,859.724,1.593
+neo4j,20000,608.974,1.593
+neo4j,20000,582.779,1.593
+neo4j,20000,562.195,1.593
+neo4j,20000,561.757,1.593
+neo4j,20000,566.586,1.593
+orient,30000,6351.398,14.102
+orient,30000,6070.544,14.102
+orient,30000,6145.829,14.102
+orient,30000,6088.339,14.102
+orient,30000,6122.404,14.102
+orient,30000,6115.604,14.102
+orient,30000,6103.806,14.102
+orient,30000,6198.115,14.102
+orient,30000,6072.792,14.102
+orient,30000,6204.965,14.102
+orient (Intent),30000,6012.450,14.102
+orient (Intent),30000,6046.004,14.102
+orient (Intent),30000,6097.213,14.102
+orient (Intent),30000,5999.160,14.102
+orient (Intent),30000,6080.978,14.102
+orient (Intent),30000,6043.176,14.102
+orient (Intent),30000,6111.133,14.102
+orient (Intent),30000,6115.861,14.102
+orient (Intent),30000,6060.786,14.102
+orient (Intent),30000,6115.019,14.102
+orient (Intent+TxOff),30000,6067.780,14.102
+orient (Intent+TxOff),30000,5950.104,14.102
+orient (Intent+TxOff),30000,5981.079,14.102
+orient (Intent+TxOff),30000,5955.345,14.102
+orient (Intent+TxOff),30000,5951.833,14.102
+orient (Intent+TxOff),30000,6014.518,14.102
+orient (Intent+TxOff),30000,5956.947,14.102
+orient (Intent+TxOff),30000,6008.264,14.102
+orient (Intent+TxOff),30000,5999.523,14.102
+orient (Intent+TxOff),30000,5966.392,14.102
+orient (Intent+TxOff+Stack10k),30000,5679.271,15.227
+orient (Intent+TxOff+Stack10k),30000,5547.305,15.227
+orient (Intent+TxOff+Stack10k),30000,5627.459,15.227
+orient (Intent+TxOff+Stack10k),30000,5649.896,15.227
+orient (Intent+TxOff+Stack10k),30000,5551.386,15.227
+orient (Intent+TxOff+Stack10k),30000,5678.650,15.227
+orient (Intent+TxOff+Stack10k),30000,5622.093,15.227
+orient (Intent+TxOff+Stack10k),30000,5623.898,15.227
+orient (Intent+TxOff+Stack10k),30000,5698.474,15.227
+orient (Intent+TxOff+Stack10k),30000,5597.300,15.227
+neo4j,30000,767.579,2.384
+neo4j,30000,802.974,2.384
+neo4j,30000,762.828,2.384
+neo4j,30000,765.327,2.384
+neo4j,30000,765.066,2.384
+neo4j,30000,767.745,2.384
+neo4j,30000,761.639,2.384
+neo4j,30000,800.003,2.384
+neo4j,30000,809.550,2.384
+neo4j,30000,773.133,2.384
+orient,40000,9194.055,15.227
+orient,40000,8309.569,15.227
+orient,40000,8180.660,15.227
+orient,40000,8146.805,15.227
+orient,40000,8098.717,15.227
+orient,40000,8173.002,15.227
+orient,40000,8116.970,15.227
+orient,40000,8221.200,15.227
+orient,40000,8097.092,15.227
+orient,40000,8232.177,15.227
+orient (Intent),40000,7935.435,15.227
+orient (Intent),40000,8044.161,15.227
+orient (Intent),40000,7980.335,15.227
+orient (Intent),40000,8044.720,15.227
+orient (Intent),40000,8110.894,15.227
+orient (Intent),40000,8030.582,15.227
+orient (Intent),40000,8037.631,15.227
+orient (Intent),40000,8053.033,15.227
+orient (Intent),40000,8118.199,15.227
+orient (Intent),40000,8101.334,15.227
+orient (Intent+TxOff),40000,8004.169,15.227
+orient (Intent+TxOff),40000,7909.532,15.227
+orient (Intent+TxOff),40000,7915.248,15.227
+orient (Intent+TxOff),40000,7933.105,15.227
+orient (Intent+TxOff),40000,7926.145,15.227
+orient (Intent+TxOff),40000,7977.712,15.227
+orient (Intent+TxOff),40000,7992.042,15.227
+orient (Intent+TxOff),40000,7987.464,15.227
+orient (Intent+TxOff),40000,8040.161,15.227
+orient (Intent+TxOff),40000,7948.355,15.227
+orient (Intent+TxOff+Stack10k),40000,7439.208,15.915
+orient (Intent+TxOff+Stack10k),40000,7325.485,15.915
+orient (Intent+TxOff+Stack10k),40000,7472.847,15.915
+orient (Intent+TxOff+Stack10k),40000,7377.503,15.915
+orient (Intent+TxOff+Stack10k),40000,7481.239,15.915
+orient (Intent+TxOff+Stack10k),40000,7404.055,15.915
+orient (Intent+TxOff+Stack10k),40000,7479.969,15.915
+orient (Intent+TxOff+Stack10k),40000,7450.563,15.915
+orient (Intent+TxOff+Stack10k),40000,7486.867,15.915
+orient (Intent+TxOff+Stack10k),40000,7378.598,15.915
+neo4j,40000,945.634,3.176
+neo4j,40000,956.983,3.176
+neo4j,40000,920.705,3.176
+neo4j,40000,1114.263,3.176
+neo4j,40000,957.319,3.176
+neo4j,40000,952.044,3.176
+neo4j,40000,962.212,3.176
+neo4j,40000,934.148,3.176
+neo4j,40000,922.715,3.176
+neo4j,40000,965.626,3.176
+orient,50000,10284.271,15.915
+orient,50000,10185.764,15.915
+orient,50000,10147.791,15.915
+orient,50000,10208.488,15.915
+orient,50000,10314.069,15.915
+orient,50000,10229.573,15.915
+orient,50000,10238.235,15.915
+orient,50000,10385.852,15.915
+orient,50000,10299.446,15.915
+orient,50000,10299.964,15.915
+orient (Intent),50000,10113.966,15.915
+orient (Intent),50000,10108.501,15.915
+orient (Intent),50000,10119.109,15.915
+orient (Intent),50000,9886.578,15.915
+orient (Intent),50000,9888.373,15.915
+orient (Intent),50000,9941.964,15.915
+orient (Intent),50000,9912.804,15.915
+orient (Intent),50000,9925.279,15.915
+orient (Intent),50000,10017.402,15.915
+orient (Intent),50000,9975.439,15.915
+orient (Intent+TxOff),50000,9912.906,15.915
+orient (Intent+TxOff),50000,10113.689,15.915
+orient (Intent+TxOff),50000,9998.211,15.915
+orient (Intent+TxOff),50000,10042.606,15.915
+orient (Intent+TxOff),50000,10133.523,15.915
+orient (Intent+TxOff),50000,10085.644,15.915
+orient (Intent+TxOff),50000,10120.886,15.915
+orient (Intent+TxOff),50000,10012.423,15.915
+orient (Intent+TxOff),50000,9877.220,15.915
+orient (Intent+TxOff),50000,9947.474,15.915
+orient (Intent+TxOff+Stack10k),50000,9008.802,17.915
+orient (Intent+TxOff+Stack10k),50000,9109.245,17.915
+orient (Intent+TxOff+Stack10k),50000,9132.975,17.915
+orient (Intent+TxOff+Stack10k),50000,9047.120,17.915
+orient (Intent+TxOff+Stack10k),50000,9230.706,17.915
+orient (Intent+TxOff+Stack10k),50000,9148.284,17.915
+orient (Intent+TxOff+Stack10k),50000,9157.803,17.915
+orient (Intent+TxOff+Stack10k),50000,9340.451,17.915
+orient (Intent+TxOff+Stack10k),50000,9174.614,17.915
+orient (Intent+TxOff+Stack10k),50000,9275.819,17.915
+neo4j,50000,1165.001,3.967
+neo4j,50000,1154.950,3.967
+neo4j,50000,1171.687,3.967
+neo4j,50000,1199.377,3.967
+neo4j,50000,1163.955,3.967
+neo4j,50000,1457.818,3.967
+neo4j,50000,1163.118,3.967
+neo4j,50000,1181.961,3.967
+neo4j,50000,1189.481,3.967
+neo4j,50000,1208.371,3.967

@@ -1,0 +1,148 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import re, os, sys
+import pylab
+import numpy
+from sets import Set
+
+def main(opts):
+    plot_input(parse_input(opts), opts.outputfile)
+
+def parse_input(opts):
+    data = open(opts.inputfile, 'r').read().split("\n")
+    orient_time = dict(); orient_size = dict()
+    neo4j_time = dict(); neo4j_size = dict()
+    compare_table = dict()
+    compare_target = Set()
+
+    for line in data:
+        if len(line) == 0: continue
+        elems = line.split(",")
+        vol = int(elems[1])
+        elapsed = float(elems[2])
+        used = float(elems[3])
+        target = elems[0]
+
+        if not target in compare_target:
+            compare_target.add(target)
+        if not compare_table.has_key(target):
+            compare_table[target] = dict()
+        if not compare_table[target].has_key("time"):
+            compare_table[target]["time"] = dict()
+        if not compare_table[target].has_key("size"):
+            compare_table[target]["size"] = dict()
+        if not compare_table[target]["time"].has_key(vol):
+            compare_table[target]["time"][vol] = []
+        if not compare_table[target]["size"].has_key(vol):
+            compare_table[target]["size"][vol] = []
+
+        compare_table[target]["time"][vol].append(elapsed)
+        compare_table[target]["size"][vol].append(used)
+
+    return (compare_target, compare_table)
+
+def colors():
+    orange = (0.918, 0.545, 0.0)
+    blue = (0.169, 0.651, 0.914)
+    green = (0.0, 0.58, 0.365)
+    red = (0.918, 0.2, 0.2)
+    stblue = (0.2, 0.2, 0.914)
+    return [orange, blue, green, red, stblue]
+
+def get_colormap():
+    from matplotlib.colors import ListedColormap
+    return ListedColormap(colors())
+
+def plot_input(parsed, outputfile):
+    (targets, table) = parsed
+
+    fig_width_pt = 492.0  # Get this from LaTeX using \showthe\columnwidth
+    inches_per_pt = 1.0/72.27               # Convert pt to inches
+    golden_mean = (numpy.sqrt(5)-1.0)/2.0         # Aesthetic ratio
+    fig_width = fig_width_pt*inches_per_pt  # width in inches
+    fig_height =fig_width*golden_mean       # height in inches
+    fig_size = [fig_width,fig_height]
+
+    params = {
+        'axes.labelsize': 10,
+        'text.fontsize': 10,
+        'legend.fontsize': 8,
+        'xtick.labelsize': 8,
+        'ytick.labelsize': 8,
+        'figure.figsize': fig_size }
+    pylab.rcParams.update(params)
+
+    ##
+    pylab.subplot(211)
+    pylab.xlabel('V (# of nodes)')
+    pylab.ylabel('Time (sec)')
+    colormap = get_colormap()
+
+    xs = []; ys = []; idxs = []
+    for i, target in enumerate(sorted(targets)):
+        xvals = []; yvals = []
+        for x in sorted(table[target]["time"].keys()):
+            for y in table[target]["time"][x]:
+                xvals.append(x)
+                yvals.append(y / 1000.0)
+        idxs = idxs + [i for x in xvals]
+        xs = xs + xvals
+        ys = ys + yvals
+    xs = numpy.array(xs)
+    ys = numpy.array(ys)
+    points = pylab.scatter(xs, ys, s=10, c=idxs, cmap=colormap, facecolors="none")
+    print "plot done"
+
+    pylab.grid(True)
+    recs = [pylab.Rectangle((0, 0), 1, 1, fc=colors()[i]) for i, x in enumerate(sorted(targets))]
+    pylab.legend(tuple(recs), tuple([x for x in sorted(targets)]), loc=2)
+
+    ##
+    pylab.subplot(212)
+    pylab.xlabel('V (# of nodes)')
+    pylab.ylabel('Size (MB)')
+
+    xs = []; ys = []; idxs = []
+    for i, target in enumerate(sorted(targets)):
+        xvals = []; yvals = []
+        for x in sorted(table[target]["size"].keys()):
+            for y in table[target]["size"][x]:
+                xvals.append(x)
+                yvals.append(y)
+        idxs = idxs + [i for x in xvals]
+        xs = xs + xvals
+        ys = ys + yvals
+    xs = numpy.array(xs)
+    ys = numpy.array(ys)
+    points = pylab.scatter(xs, ys, s=10, c=idxs, cmap=colormap, facecolors="none")
+    print "plot done"
+
+    pylab.grid(True)
+    pylab.savefig(outputfile)
+    sys.exit(1)
+
+    # x  = numpy.array(sorted(
+    # y = orient_time.values()
+    # plot(x,y, 'o')
+    # savefig('graph1.png')
+
+if __name__ == '__main__':
+    import optparse
+    usage = 'usage: %prog [options] bench_chain'
+    version = '2012.05.24'
+    optparser = optparse.OptionParser(usage=usage, version=version, conflict_handler='resolve')
+    optparser.add_option('-h', '--help', action='help',
+                         help='print this help text and exit')
+    optparser.add_option('-v', '--version', action='version',
+                         help='print program version and exit')
+    optparser.add_option('-i', '--input', dest='inputfile',
+                         help='inputfile path')
+    optparser.add_option('-o', '--output', dest='outputfile',
+                         help='outputfile path')
+    (opts, args) = optparser.parse_args()
+
+    if len(opts.inputfile) == 0 or len(opts.outputfile) == 0:
+        optparser.print_help()
+        sys.exit(1)
+    main(opts) # no args
