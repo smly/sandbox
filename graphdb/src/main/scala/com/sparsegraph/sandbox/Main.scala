@@ -19,6 +19,7 @@ object Main {
     }
     args(0) match {
       case "Chain" => new Chain { }.run()
+      case "SI" => new SI { }.run()
       case _ => println("No such className")
     }
   }
