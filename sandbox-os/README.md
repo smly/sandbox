@@ -6,11 +6,14 @@ OS 依存のコード、システムコールを扱うプログラム、コン�
 
 短い話や未調査の話題はリスト形式で、コードや引用を含む長い話は小節で記述する。
 
+* サポートする version は `SYSCALLS(2)` があるからここに書かなくてよかった．http://www.kernel.org/doc/man-pages/online/pages/man2/syscalls.2.html
+
 ## sync_file_range()
 
 * マクロを使って glibc のバージョンで関数があるかないか判定することがよくあること
 * RHEL 5 の sync_file_range() は未実装．バグ．https://bugzilla.redhat.com/show_bug.cgi?id=518581
-** redis 2.6.0 → 2.6.1 差分で知った https://github.com/antirez/redis/pull/730
+** redis 2.6.0 → 2.6.1 差分で知った https://github.com/antirez/redis/pull/730 https://github.com/antirez/redis/issues/667
+** 2012-01-31 に RHEL 5 のサポートが延長されて 2017-03-31 までとなっている http://www.nec.co.jp/linux/linux-os/rhel10y.html
 
 ## sendfile()
 
