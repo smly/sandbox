@@ -1,17 +1,16 @@
 # sandbox-os
 
-OS 依存のコード、システムコールを扱うプログラム、コンパイラのバージョン依存の問題などのメモ書き。移植性については、いつも使う環境がだいたい Linux すこしだけ Darwin なので、いくらか Linux 贔屓な点があります。**メモ書きなので内容に期待しては滅（めっ）です**。
+OS 依存のコード、システムコールを扱うプログラム、コンパイラのバージョン依存の問題などのメモ書きでう。移植性については、いつも使う環境がだいたい Linux すこしだけ Darwin なので、いくらか Linux 贔屓な点があります。**メモ書きなので内容に期待してはだめです**。
 
 だいたい移植性の高いコードを書く・異なる OS 上で動作することを想定したコードを読む・古いコードを読むこと考えて忘れそうなことをメモしている。どの仕様で deprecated か、どのバージョンで問題が起きるのかを可能であれば（暇であれば）調べる。
 
 短い話や未調査の話題はリスト形式で、コードや引用を含む長い話は小節で記述する。
 
-* signalhandler
-  * Linux 以外よくわからない。そもそも普段使わないので機会があれば調べる。
-  * catch_signal.c
-* TCP_CORK
-  * Nagle algorithm (ref. <http://d.hatena.ne.jp/nyaxt/20090107>)
-* todo: mmap, flock
+## sync_file_range()
+
+* マクロを使って glibc のバージョンで関数があるかないか判定することがよくあること
+* RHEL 5 の sync_file_range() は未実装．バグ．https://bugzilla.redhat.com/show_bug.cgi?id=518581
+** redis 2.6.0 → 2.6.1 差分で知った https://github.com/antirez/redis/pull/730
 
 ## sendfile()
 
@@ -174,6 +173,15 @@ getline(char **outbuf, size_t *outsize, FILE *fp)
 }
 #endif
 </pre>
+
+## 他
+
+* signalhandler
+  * Linux 以外よくわからない。そもそも普段使わないので機会があれば調べる。
+  * catch_signal.c
+* TCP_CORK
+  * Nagle algorithm (ref. <http://d.hatena.ne.jp/nyaxt/20090107>)
+* todo: mmap, flock
 
 ## reference
 
