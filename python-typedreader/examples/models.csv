@@ -1,0 +1,4 @@
+id,base_score,extend_type,num_item,num_global,num_ufeedback,buffer_feature,test_buffer_feature
+1,,,10,10,10,buffer.base.feature.1,buffer.test.feature.1
+2,,,12,12,12,buffer.base.feature.2,buffer.test.feature.2
+3,0.98,31,12,12,14,buffer.base.feature.3,buffer.test.feature.3
