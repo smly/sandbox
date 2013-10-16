@@ -1,6 +1,0 @@
-*~
-build/
-tmp/
-conf.log
-.lock-wscript
-.waf*
