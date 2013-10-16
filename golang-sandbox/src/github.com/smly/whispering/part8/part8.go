@@ -3,22 +3,23 @@ package main
 /*
 	Usage:
 		$ go run part8/part8.go -private -dial localhost:4000 -port 4001
-		$ go run part8/part8.go -wild -private -dial localhost:4001 -port 4000
+		$ go run part8/part8.go -private -dial localhost:4001 -port 4000
 */
 import (
+	"bufio"
 	"encoding/json"
 	"flag"
 	"fmt"
 	"io"
 	"log"
 	"net"
+	"os"
 	"strings"
 	"sync"
 	"time"
 
 	"code.google.com/p/whispering-gophers/util"
 )
-
 
 const (
 	STATUS_REPORT_INTERVAL = 20
@@ -105,14 +106,10 @@ var (
 	dialAddr    = flag.String("dial", "0.0.0.0:4001", "dial address")
 	listenPort  = flag.Int("port", 4000, "listen port")
 	privateFlag = flag.Bool("private", false, "private network")
-	wildFlag    = flag.Bool("wild", false, "ignore message id")
 )
 var self string
 
 func Broadcast(msg Message) {
-	if *wildFlag {
-		msg.ID = util.RandomID()
-	}
 	for _, ch := range peers.List() {
 		select {
 		case ch <- msg: // Send message into a channel
@@ -130,32 +127,32 @@ func Serve(conn net.Conn) {
 			log.Println(err)
 			break
 		}
+		// TODO: Check msg.Addr
+
 		// Connect the peer when it send some message
 		go Dialing(msg.Addr)
 		// Track the ID of each received message
-		if seen := tracking.Seen(msg.ID); !seen && *wildFlag {
+		if seen := tracking.Seen(msg.ID); !seen {
+			log.Printf("Received message: %s (from %s)\n",
+				msg.Body,
+				msg.Addr)
 			Broadcast(msg)
 		}
 	}
 }
 
-func LoopMessage() {
-	for {
-		var msg Message
-		msg = Message{
+func ReadInput() {
+	scanner := bufio.NewScanner(os.Stdin)
+	for scanner.Scan() {
+		msg := Message{
 			ID:   util.RandomID(),
 			Addr: self,
-			Body: "進捗どうですか？",
+			Body: scanner.Text(),
 		}
 		Broadcast(msg)
-		time.Sleep(200 * time.Millisecond)
-		msg = Message{
-			ID:   util.RandomID(),
-			Addr: self,
-			Body: "進捗ダメです",
-		}
-		Broadcast(msg)
-		time.Sleep(200 * time.Millisecond)
+	}
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
 	}
 }
 
@@ -254,7 +251,7 @@ func main() {
 	flag.Parse()
 
 	go ConnectionStatus()
-	go LoopMessage()
+	go ReadInput()
 	go Dialing(*dialAddr)
 	Listening()
 }
