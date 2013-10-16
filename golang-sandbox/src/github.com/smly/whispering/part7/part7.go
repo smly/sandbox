@@ -1,0 +1,225 @@
+package main
+
+/*
+	Usage:
+		$ go run part7/part7.go -private -dial localhost:4000 -port 4001
+		$ go run part7/part7.go -private -dial localhost:4001 -port 4000
+*/
+import (
+	"bufio"
+	"encoding/json"
+	"flag"
+	"fmt"
+	"io"
+	"log"
+	"net"
+	"os"
+	"strings"
+	"sync"
+	"time"
+
+	"code.google.com/p/whispering-gophers/util"
+)
+
+const (
+	STATUS_REPORT_INTERVAL = 20
+)
+
+type Message struct {
+	Addr string
+	Body string
+}
+
+type Peers struct {
+	m  map[string]chan<- Message
+	mu sync.RWMutex
+}
+
+func (p *Peers) Add(addr string) <-chan Message {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	if _, ok := p.m[addr]; ok {
+		return nil
+	} else {
+		ch := make(chan Message)
+		p.m[addr] = ch
+		return ch
+	}
+}
+
+func (p *Peers) Remove(addr string) {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	delete(p.m, addr)
+}
+
+func (p *Peers) List() []chan<- Message {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	var chs []chan<- Message
+	for _, ch := range p.m {
+		chs = append(chs, ch)
+	}
+	return chs
+}
+
+func (p *Peers) NameList() []string {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	var names []string
+	for addr, _ := range p.m {
+		names = append(names, addr)
+	}
+	return names
+}
+
+var peers = &Peers{
+	m: make(map[string]chan<- Message)}
+
+var (
+	dialAddr    = flag.String("dial", "0.0.0.0:4001", "dial address")
+	listenPort  = flag.Int("port", 4000, "listen port")
+	privateFlag = flag.Bool("private", false, "private network")
+)
+var self string
+
+func Broadcast(msg Message) {
+	for _, ch := range peers.List() {
+		select {
+		case ch <- msg: // Send message into a channel
+		default: // Drop message
+		}
+	}
+}
+
+func Serve(conn net.Conn) {
+	defer conn.Close()
+	dec := json.NewDecoder(conn)
+	for {
+		var msg Message
+		if err := dec.Decode(&msg); err != nil {
+			log.Println(err)
+			break
+		}
+		// TODO: Check msg.Addr
+
+		// Connect the peer when it send some message
+		go Dialing(msg.Addr)
+		log.Printf("Received message: %s (from %s)\n",
+			msg.Body,
+			msg.Addr)
+	}
+}
+
+func ReadInput() {
+	scanner := bufio.NewScanner(os.Stdin)
+	for scanner.Scan() {
+		msg := Message{
+			Addr: self,
+			Body: scanner.Text(),
+		}
+		Broadcast(msg)
+	}
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
+}
+
+func Communicate(out io.Writer, ch <-chan Message) {
+	enc := json.NewEncoder(out)
+	for msg := range ch {
+		err := enc.Encode(msg)
+		if err != nil {
+			log.Println("Decode error found: ", err)
+			return
+		}
+	}
+}
+
+func Dialing(addr string) {
+	// localhost -> 127.0.0.1 -> 0.0.0.0
+	switch {
+	case strings.HasPrefix(addr, "localhost:"):
+		elems := strings.Split(addr, ":")
+		if len(elems) == 2 {
+			addr = fmt.Sprintf("0.0.0.0:%s", elems[1])
+		}
+	case strings.HasPrefix(addr, "127.0.0.1:"):
+		elems := strings.Split(addr, ":")
+		if len(elems) == 2 {
+			addr = fmt.Sprintf("0.0.0.0:%s", elems[1])
+		}
+	}
+
+	switch {
+	case addr == self:
+		return
+	case addr == "":
+		return
+	}
+
+	ch := peers.Add(addr)
+	if ch == nil {
+		// already connected
+		return
+	}
+
+	conn, err := net.Dial("tcp", addr)
+	if err != nil {
+		log.Printf("Connection error: %s\n", err)
+
+	} else {
+		defer conn.Close()
+		Communicate(conn, ch)
+	}
+	peers.Remove(addr)
+}
+
+func Listening() {
+	l, err := Listen()
+	if err != nil {
+		log.Fatal(err)
+	}
+	self = l.Addr().String()
+	log.Println("Listening on", self)
+
+	// Listen
+	for {
+		conn, err := l.Accept()
+		if err != nil {
+			log.Fatal(err)
+		}
+		// Launch a goroutine to handle each connection
+		go Serve(conn)
+	}
+}
+
+func ConnectionStatus() {
+	for {
+		time.Sleep(STATUS_REPORT_INTERVAL * time.Second)
+		log.Printf("Current status: ok=%d\n",
+			len(peers.NameList()))
+
+		for i, addr := range peers.NameList() {
+			log.Printf("  - Peer%02d: %s\n", i, addr)
+		}
+	}
+
+}
+
+func Listen() (l net.Listener, err error) {
+	if *privateFlag {
+		return net.Listen("tcp", fmt.Sprintf(":%d", *listenPort))
+	} else {
+		return util.Listen()
+	}
+}
+
+func main() {
+	flag.Parse()
+
+	go ConnectionStatus()
+	go ReadInput()
+	go Dialing(*dialAddr)
+	Listening()
+}
