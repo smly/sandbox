@@ -16,3 +16,4 @@ ruby-presen-help/*.rb
 ruby-presen-help/*~
 puzzle/gcj*/
 puzzle/euler/
+*.pdf
