@@ -1,0 +1,5 @@
+## Requirements
+
+- expect
+- ghost
+- docker

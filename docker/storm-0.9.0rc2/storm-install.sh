@@ -1,7 +1,5 @@
 #!/bin/bash
 
-REGION_MIRROR=ap-northeast-1.ec2.archive.ubuntu.com
-
 STORM_DIST=https://dl.dropboxusercontent.com/s/p5wf0hsdab5n9kn/storm-0.9.0-rc2.zip
 STORM_NAME=`basename ${STORM_DIST}`
 STORM_DIRNAME=storm-0.9.0-rc2
@@ -13,13 +11,6 @@ ZK_DIRNAME=zookeeper-3.4.5
 ZEROMQ_DIST=http://download.zeromq.org/zeromq-2.1.7.tar.gz
 JZMQ_DIST=https://github.com/nathanmarz/jzmq.git
 
-cat <<EOF > /etc/apt/sources.list
-deb http://${REGION_MIRROR}/ubuntu precise main
-deb http://${REGION_MIRROR}/ubuntu precise-updates main
-deb http://${REGION_MIRROR}/ubuntu precise-security main
-EOF
-
-apt-get update
 apt-get -y install wget unzip openjdk-6-jdk git pkg-config \
   autoconf libtool gcc g++ make uuid-dev
 
@@ -86,14 +77,36 @@ EOF
 cat <<EOF > /opt/storm/bin/run
 #!/bin/bash
 
-echo "Run zookeeper server"
-/opt/zk/bin/zkServer.sh start
-sleep 3
-echo "Run storm ui server"
-/opt/storm/bin/storm ui &!
-sleep 3
-echo "Run storm nimbus server"
-/opt/storm/bin/storm nimbus
+exec /usr/bin/supervisord
 EOF
 
 chmod a+x /opt/storm/bin/run
+
+cat <<EOF > /etc/supervisor/conf.d/supervisord.conf
+[supervisord]
+nodaemon=true
+
+[program:stormui]
+command=/opt/storm/bin/storm ui
+stdout_logfile=/var/log/supervisor/storm_ui.log
+stderr_logfile=/var/log/supervisor/storm_ui.log
+autorestart=true
+
+[program:nimbus]
+command=/opt/storm/bin/storm nimbus
+stdout_logfile=/var/log/supervisor/nimbus.log
+stderr_logfile=/var/log/supervisor/nimbus.log
+autorestart=true
+
+[program:zookeeper]
+command=/opt/zk/bin/zkServer.sh start-foreground
+stdout_logfile=/var/log/supervisor/%(program_name)s.log
+stderr_logfile=/var/log/supervisor/%(program_name)s.log
+autorestart=true
+
+[program:sshd]
+command=/usr/sbin/sshd -D
+stdout_logfile=/var/log/supervisor/%(program_name)s.log
+stderr_logfile=/var/log/supervisor/%(program_name)s.log
+autorestart=true
+EOF

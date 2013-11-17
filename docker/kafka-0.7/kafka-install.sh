@@ -1,18 +1,9 @@
 #!/bin/bash
 
-REGION=ap-northeast-1
-
 KAFKA_DIST=http://ftp.riken.jp/net/apache/incubator/kafka/kafka-0.7.2-incubating/kafka-0.7.2-incubating-src.tgz
 KAFKA_NAME=`basename ${KAFKA_DIST}`
 KAFKA_DIRNAME=${KAFKA_NAME%.*}
 
-cat <<EOF > /etc/apt/sources.list
-deb http://${REGION}.ec2.archive.ubuntu.com/ubuntu precise main universe
-deb http://${REGION}.ec2.archive.ubuntu.com/ubuntu precise-updates main universe
-deb http://${REGION}.ec2.archive.ubuntu.com/ubuntu precise-security main universe
-EOF
-
-apt-get update
 apt-get -y install wget openjdk-6-jdk
 
 cd /opt
@@ -82,8 +73,30 @@ if [[ ! -e /opt/kafka/config/server.properties.bak ]]; then
     /opt/kafka/config/server.properties
 fi
 
-/opt/kafka/bin/zookeeper-server-start.sh /opt/kafka/config/zookeeper.properties &!
-/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+exec /usr/bin/supervisord
 EOF
 
 chmod a+x /opt/kafka/bin/run
+
+cat <<EOF > /etc/supervisor/conf.d/supervisord.conf
+[supervisord]
+nodaemon=true
+
+[program:kafka]
+command=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+stdout_logfile=/var/log/supervisor/%(program_name)s.log
+stderr_logfile=/var/log/supervisor/%(program_name)s.log
+autorestart=true
+
+[program:zookeeper]
+command=/opt/kafka/bin/zookeeper-server-start.sh /opt/kafka/config/zookeeper.properties
+stdout_logfile=/var/log/supervisor/%(program_name)s.log
+stderr_logfile=/var/log/supervisor/%(program_name)s.log
+autorestart=true
+
+[program:sshd]
+command=/usr/sbin/sshd -D
+stdout_logfile=/var/log/supervisor/%(program_name)s.log
+stderr_logfile=/var/log/supervisor/%(program_name)s.log
+autorestart=true
+EOF
